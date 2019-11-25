@@ -1,0 +1,47 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#root {
+  text-align: center;
+}
+
+#root h2 {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+input {
+  padding: 10px;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+ul li {
+  border: 1px #efefef solid;
+  margin: 10px 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul button {
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  background: #ff4757;
+  -webkit-box-shadow: 0 15px 40px -10px rgba(255, 71, 87), 0.9;
+  box-shadow: 0 15px 40px -10px rgba(255, 71, 87), 0.9;
+}
