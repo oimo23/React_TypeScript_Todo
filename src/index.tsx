@@ -11,27 +11,6 @@ interface Todo {
 }
 
 // ***************************************
-// Todo追加用フォーム
-// ***************************************
-// Propsの型定義
-interface NewTodoFormProps {
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onAdd: (event: React.FormEvent<HTMLFormElement>) => void;
-  todo: Todo;
-}
-
-const NewTodoForm: React.FunctionComponent<NewTodoFormProps> = ({
-  onChange,
-  onAdd,
-  todo
-}) => (
-  <form onSubmit={onAdd}>
-    <input onChange={onChange} value={todo.name} />
-    <button type="submit">Add a todo</button>
-  </form>
-);
-
-// ***************************************
 // Todo単体の定義
 // ***************************************
 // Propsの型定義
@@ -70,9 +49,30 @@ const TodosList: React.FunctionComponent<TodosListProps> = ({
 }) => (
   <ul>
     {todos.map(todo => (
-      <TodoListItem todo={todo} onDelete={onDelete} />
+      <TodoListItem todo={todo} key={todo.id} onDelete={onDelete} />
     ))}
   </ul>
+);
+
+// ***************************************
+// Todo追加用フォーム
+// ***************************************
+// Propsの型定義
+interface NewTodoFormProps {
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onAdd: (event: React.FormEvent<HTMLFormElement>) => void;
+  todo: Todo;
+}
+
+const NewTodoForm: React.FunctionComponent<NewTodoFormProps> = ({
+  onChange,
+  onAdd,
+  todo
+}) => (
+  <form onSubmit={onAdd}>
+    <input onChange={onChange} value={todo.name} />
+    <button type="submit">Add a todo</button>
+  </form>
 );
 
 // ***************************************
